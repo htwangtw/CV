@@ -26,11 +26,14 @@
 \usepackage{tabularx}
 
 \usepackage{hyperref}
-
+\usepackage[numbers]{natbib}
 \usepackage[resetlabels]{multibib}
 
 % Define bibliographies.
-\newcites{j,p,c,t}{Journals,Preprints,Conferences,Talks}
+\newcites{j,p,c,t}{\large{Peer-Reviewed Journals},
+	           \large{Preprints},
+		   \large{Conferences Presentations},
+		   \large{Talks}}
 
 \usepackage{xpatch}
 \makeatletter
@@ -51,8 +54,8 @@
 
 
 \name{Hao-Ting Wang, PhD} % Your name
-\position{Research Fellow }
-\address{Department of Psychology, University of York, Heslington, York, YO10 5DD, UK}
+\position{Research Fellow}
+\address{Sackler Centre of Consciousness Science, UK}
 \address{haoting.wang@york.ac.uk \\ https://wanghaoting.com/}
 
 \begin{document}
@@ -64,6 +67,7 @@
 \begin{rSection}{Research positions}
 
 \begin{rSubsection}{Research Fellow}{2019 -- Present}{Brighton and Sussex Medical School, University of Sussex}{Brighton, United Kingdom}
+\item PI: Prof Hugo Critchley
 \end{rSubsection}
 
 \begin{rSubsection}{Postdoctoral Research Associate}{2018 -- 2019}{University of York}{York, United Kingdom}
@@ -92,11 +96,11 @@
 \item Thesis: ``\textit{Towards an Ontology of Ongoing Thought}''
 \end{rSubsection}
 
-\begin{rSubsection}{Master of Research in Psychology}{2013 -- 2014}{University of York}{York, United Kingdom}
-\end{rSubsection}
+\begin{EDUrSubsection}{Master of Research in Psychology}{2013 -- 2014}{University of York}{York, United Kingdom}
+\end{EDUrSubsection}
 
-\begin{rSubsection}{BSc in Psychology}{2009 -- 2013}{National Chengchi University}{Taipei, Taiwan}
-\end{rSubsection}
+\begin{EDUrSubsection}{BSc in Psychology}{2009 -- 2013}{National Chengchi University}{Taipei, Taiwan}
+\end{EDUrSubsection}
 
 \end{rSection}
 
@@ -132,20 +136,9 @@
 \nocitep{*}
 \nocitec{*}
 
-\textbf{Preprint}
-{\removebibheader
- \bibliographyp{preprints}
-}
-
-\textbf{Peer-Reviewed Journals}
-{\removebibheader
- \bibliographyj{publications}
-}
-
-\textbf{Conference Posters}
-{\removebibheader
- \bibliographyc{conferences}
-}
+\bibliographyp{preprints}
+\bibliographyj{publications}
+\bibliographyc{conferences}
 
 \end{rSection}
 
@@ -190,7 +183,7 @@ Experiment Design & PsychoPy\\
 
 \end{rSection}
 
-\newpage
+%\newpage
 %----------------------------------------------------------------------------------------
 %	Academic Service
 %----------------------------------------------------------------------------------------
