@@ -30,20 +30,7 @@
 \usepackage[resetlabels]{multibib}
 
 % Define bibliographies.
-\newcites{j,p,c,t}{\large{Peer-Reviewed Journals},
-	           \large{Preprints},
-		   \large{Conferences Presentations},
-		   \large{Talks}}
-
-\usepackage{xpatch}
-\makeatletter
-\newcommand\removebibheader
-  {\xpatchcmd\std@thebibliography
-    {\section*{\refname}%
-     \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-    }{}{}{}%
-  }
-\makeatother
+\newcites{j,p,c,t}{\normalsize{Peer-Reviewed Journals},\normalsize{Preprints},\normalsize{Conference Posters},\normalsize{Talks}}
 
 \usepackage{textcomp}
 \usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.75in]{geometry} % Document margins
@@ -55,8 +42,8 @@
 
 \name{Hao-Ting Wang, PhD} % Your name
 \position{Research Fellow}
-\address{Sackler Centre of Consciousness Science, UK}
-\address{haoting.wang@york.ac.uk \\ https://wanghaoting.com/}
+\address{Sackler Centre of Consciousness Science, Brighton and Sussex Medical School, UK}
+\address{H.Wang@bsms.ac.uk \\ https://wanghaoting.com/}
 
 \begin{document}
 
@@ -66,21 +53,19 @@
 
 \begin{rSection}{Research positions}
 
-\begin{rSubsection}{Research Fellow}{2019 -- Present}{Brighton and Sussex Medical School, University of Sussex}{Brighton, United Kingdom}
-\item PI: Prof Hugo Critchley
+\begin{rSubsection}{Research Fellow}{Sept. 2019 -- Present}{Sackler Centre for Consciousness Science, Brighton and Sussex Medical School}{Brighton, United Kingdom}
+\item PI: Prof Hugo Critchley, Prof Sarah Garfinkle
+\item Cognitive processes in psychiatric conditions with neuroimaging and introceptive measures
 \end{rSubsection}
 
-\begin{rSubsection}{Postdoctoral Research Associate}{2018 -- 2019}{University of York}{York, United Kingdom}
+\begin{rSubsection}{Postdoctoral Research Associate}{Nov. 2018 -- Aug. 2019}{University of York}{York, United Kingdom}
+\item PI: Prof Jonathan Smallwood
 \item Working on the ERC grant project---Wandering Minds
 \end{rSubsection}
 
-\begin{rSubsection}{Research Administrator}{2015 -- 2018}{University of York}{York, United Kingdom}
-\item Experiment design, project management, neuroimaging analysis pipeline development
-\end{rSubsection}
-
-\begin{rSubsection}{Research Assistant}{2015}{National Taiwan University}{Taipei, Taiwan}
-\item Project: Attention regulation in children with Tourette syndrome
-\item Experiment design, data collection and analysis
+\begin{rSubsection}{Research Administrator}{Oct. 2015 -- Oct. 2018}{University of York}{York, United Kingdom}
+  \item PI: Prof Jonathan Smallwood and Prof Elizabeth Jefferies
+  \item Experiment design, project management, neuroimaging analysis pipeline development
 \end{rSubsection}
 
 \end{rSection}
@@ -91,32 +76,16 @@
 
 \begin{rSection}{Education}
 
-\begin{rSubsection}{PhD in Cognitive Neuroscience and Neuroimaging}{2015 -- 2018}{University of York}{York, United Kingdom}
-\item Prof. Jonathan Smallwood and Prof. Elizabeth Jefferies
-\item Thesis: ``\textit{Towards an Ontology of Ongoing Thought}''
+\begin{rSubsection}{PhD in Cognitive Neuroscience and Neuroimaging}{Sept. 2015 -- Dec. 2018}{University of York}{York, United Kingdom}
+  \item Supervisors: Prof Jonathan Smallwood and Prof Elizabeth Jefferies
+  \item Thesis: ``\textit{Towards an Ontology of Ongoing Thought}''
 \end{rSubsection}
 
-\begin{EDUrSubsection}{Master of Research in Psychology}{2013 -- 2014}{University of York}{York, United Kingdom}
+\begin{EDUrSubsection}{Master of Research in Psychology}{Sept. 2013 -- Sept. 2014}{University of York}{York, United Kingdom}
 \end{EDUrSubsection}
 
-\begin{EDUrSubsection}{BSc in Psychology}{2009 -- 2013}{National Chengchi University}{Taipei, Taiwan}
+\begin{EDUrSubsection}{BSc in Psychology}{Sept. 2009 -- June 2013}{National Chengchi University}{Taipei, Taiwan}
 \end{EDUrSubsection}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	GRANTS SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Awards}
-
-\begin{tabular}{@{} c l l r @{\hspace{6ex}}}
-
-2017 & Travel Award & Guarantors of Brain & \pounds 600\\
-2016 & Travel Award & Brainhack Vienna & \$500\\
-2014 & Department Summer Bursary Award & University of York &\pounds 1000\\
- 
-\end{tabular}
 
 \end{rSection}
 
@@ -130,18 +99,31 @@
 % Publications.
 \bibliographystylej{IEEEtran}
 \bibliographystylep{IEEEtran}
-\bibliographystylec{IEEEtran}
 
 \nocitej{*}
 \nocitep{*}
-\nocitec{*}
-
+\vspace*{-\baselineskip}
 \bibliographyp{preprints}
+\vspace*{-\baselineskip}
 \bibliographyj{publications}
-\bibliographyc{conferences}
 
 \end{rSection}
 
+\begin{rSection}{Presentations}
+\vspace*{-\baselineskip}
+\bibliographystylec{IEEEtran}
+\nocitec{*}
+\bibliographyc{conferences}
+
+\normalsize{\textbf{Talks}}
+\sectionskip\\
+\begin{tabular}{@{} l l @{\hspace{6ex}}}
+  2019 & Data simulation workshop, Univerisity of York, York, UK\\
+  2019 & Multivariate mapping of functional brain and behaviour, Child Mind Institute, New York\\
+  2018 & Small steps to reproducible science, Univerisity of York, York, UK\\
+\end{tabular}
+
+\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	TECHNICAL STRENGTHS SECTION
@@ -149,14 +131,30 @@
 \begin{rSection}{Software and Programming Skills}
 
 \begin{tabularx}{\textwidth}{@{} >{\bf}r X l @{\hspace{6ex}}}
-Brain Imaging & FSL, Freesurfer, Connectome Workbench, C-PAC, CONN, nipype\\
-Programming Language & Python, Bash, R, MATLAB\\
-Research Computing & High performance clusters (SGE), version control (git), AWS \\
-Operating Systems & Linux, Windows\\
-Experiment Design & PsychoPy\\
+  Brain Imaging & FSL, Freesurfer, Connectome Workbench, C-PAC, CONN, nipype\\
+  Programming Language & Python, Bash, R, MATLAB\\
+  Research Computing & High performance clusters (SGE), version control (git), AWS \\
+  Operating Systems & Linux, Windows\\
+  Experiment Design & PsychoPy\\
 \end{tabularx}
 \end{rSection}
 
+%----------------------------------------------------------------------------------------
+%	GRANTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Awards}
+
+  \begin{tabular}{@{} c l l r @{\hspace{6ex}}}
+  
+  2017 & Travel Award & Guarantors of Brain & \pounds 600\\
+  2016 & Travel Award & Brainhack Vienna & \$500\\
+  2014 & Department Summer Bursary Award & University of York &\pounds 1000\\
+   
+  \end{tabular}
+  
+  \end{rSection}
+  
 %----------------------------------------------------------------------------------------
 %	SUPERVISION
 %----------------------------------------------------------------------------------------
@@ -168,7 +166,6 @@ Experiment Design & PsychoPy\\
 2018 & Delali Konu & University of York & Master student, authored one paper\\
 2018 & Rebecca Lowndes & University of York & Master student, authored one paper \\
 \end{tabular}
-
 \end{rSection}
 
 
@@ -178,7 +175,8 @@ Experiment Design & PsychoPy\\
 
 \begin{rSection}{Teaching experience}
 \begin{rSubsection}{University of York}{October -- March 2016}{Programming in Neuroimaging}{York, United Kingdom}
-\item Teaching assistant. Topics covered basic Python, data visualization, PsychoPy, data analysis and shell scripting.
+\item Teaching assistant. 
+\item Basic Python, data visualization, PsychoPy, data analysis and shell scripting.
 \end{rSubsection}
 
 \end{rSection}
@@ -199,9 +197,9 @@ Advances in Methods and Practices in Psychological Science,
 Brain Imaging and Behavior,
 Neuroinformatics
 
-
 \textbf{Membership}\\
 Open Science Interest Group, University of York\\
+Early Career Researcher, University of York\\
 Organization of Human Brain Mapping\\
 \end{rSection}
 
@@ -211,8 +209,8 @@ Organization of Human Brain Mapping\\
 \begin{rSection}{Professional development}
 
 \begin{tabular}{@{} l l @{\hspace{6ex}}}
-Aug. 2019 & Neurohackadmey, Seattle, USA.\\
-Dec. 2017 & Gradient workshop, Leipzig, Germany.\\
+Aug. 2019 & Neurohackademy, Seattle, USA.\\
+Dec. 2017 & Large-scale trends in cortical organization, Leipzig, Germany.\\
 June 2017 & Machine Learning Summer School, T\"{u}bingen, Germany.\\
 Sep. 2016 & Brainhack Vienna, Vienna, Austria.\\
 Feb. 2016 & Brainhack@Paris, Paris, France.\\
