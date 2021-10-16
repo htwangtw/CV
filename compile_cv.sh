@@ -6,6 +6,7 @@ pdflatex cv
 bibtex cv
 pdflatex cv
 
+rm ~/cv.pdf
 cp cv.pdf ~/
 git checkout gh-pages
 mv ~/cv.pdf .
