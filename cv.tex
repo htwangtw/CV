@@ -34,10 +34,11 @@
 }
 \usepackage[resetlabels]{multibib}
 % Define bibliographies.
-\newcites{j,h,c}{
+\newcites{j,h,c,g}{
  \normalsize{Peer-Reviewed Journals},
  \normalsize{Highlights},
- \normalsize{Conference Posters}}
+ \normalsize{Conference Posters},
+ \normalsize{Consortion}}
 
 \usepackage{textcomp}
 \usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.75in]{geometry} % Document margins
@@ -108,13 +109,34 @@
 
 
 %----------------------------------------------------------------------------------------
+%	GRANTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Awards}
+
+  \begin{tabular}{@{} c l l r @{\hspace{6ex}}}
+
+  2017 & Travel Award & Guarantors of Brain & \pounds 600\\
+  2016 & Travel Award & Brainhack Vienna & \$500\\
+  2014 & Department Summer Bursary Award & University of York &\pounds 1000\\
+
+  \end{tabular}
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Selected Publications}
 
-	\bibliographystyleh{IEEEtran}
-	\nociteh{*}
-	\bibliographyh{highlights}
+	% \bibliographystyleh{IEEEtran}
+	% \nociteh{*}
+	% \bibliographyh{highlights}
+
+	\bibliographystyleg{IEEEtran}
+  \nociteg{*}
+  \bibliographyg{consortion}
 
 	\bibliographystylej{IEEEtran}
   \nocitej{*}
@@ -130,8 +152,8 @@
 %	Talks
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Talks}
-  \begin{tabular}{@{} l l @{\hspace{6ex}}}
+\begin{rSection}{Invited talks}
+  \begin{tabular}{@{} l l @{\hspace{10ex}}}
     2021 & Panel speaker at SciPy2021 Biology and Neuroscience mini-symposium\\
   	2021 & Canonical correlation analysis application in neuroimaging data, Queen's University, Kingston, Canada\\
     2019 & Recent trend in resting-state functional connectivity, University of Sussex, Brighton, UK\\
@@ -140,6 +162,44 @@
     2018 & Small steps to reproducible science, University of York, York, UK\\
   \end{tabular}
 \end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	Software
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Open source software contributions}
+  \begin{itemize}
+      \item \href{https://github.com/nilearn/nilearn}{NiLearn}: Core developer.
+      \item \href{https://github.com/SIMEXP/load_confounds}{load\_confounds}: Core developer.
+      \item \href{https://github.com/brainhackorg/brainhack_jupyter_book}{Brainhack book}: csv to markdown table parser for website and code review.
+      \item \href{https://github.com/nipype/pydra-fsl}{Pydra-FSL}: FSL wrapped with python workflow engine; nipype 1 to pydra interface converter.
+      \item \href{https://github.com/nipy/nibabel/pull/793}{NiBable}: GIFTI data reading method
+  \end{itemize}
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Technical Expertise}
+  \textbf{Overview}: Functional magnetic resonance imaging,
+  neuroinformatics, multivariate analysis.
+
+\begin{rSubsection}{Technologies}{}{}{}
+  \item \textit{Neuroimaging}: FSL, fMRIPrep, Freesurfer, Connectome Workbench,
+                      Brain Image Data Structure (BIDS), nipype
+  \item \textit{Statistics}:  nilearn, scikit-learn, JASP
+  \item \textit{Experiment design}: PsychoPy
+  \item \textit{Research computing}: container (docker, singularity),
+                            cluster computing (SGE),
+                            version control (git, github)
+\end{rSubsection}
+\begin{rSubsection}{Programming Languages}{}{}{}
+  \item Proficient: Python2/3, shell. Competent: \LaTeX, MATLAB. Familiar: R, JavaScript.
+\end{rSubsection}
+
+\end{rSection}
+
 
 %----------------------------------------------------------------------------------------
 %	SUPERVISION
@@ -169,55 +229,6 @@
   \begin{rSubsection}{University of York}{October -- March 2016}{Programming in Neuroimaging}{York, United Kingdom}
     \item Teaching assistant: Basic Python, data visualisation, PsychoPy, data analysis, and shell scripting.
   \end{rSubsection}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
-%----------------------------------------------------------------------------------------
-\begin{rSection}{Technical Expertise}
-  \textbf{Overview}: Functional magnetic resonance imaging,
-  neuroinformatics, multivariate analysis.
-
-\begin{rSubsection}{Technologies}{}{}{}
-  \item \textit{Neuroimaging}: FSL, fMRIPrep, Freesurfer, Connectome Workbench,
-                      Brain Image Data Structure (BIDS), nipype
-  \item \textit{Statistics}:  nilearn, scikit-learn, JASP
-  \item \textit{Experiment design}: PsychoPy
-  \item \textit{Research computing}: container (docker, singularity),
-                            cluster computing (SGE),
-                            version control (git, github)
-\end{rSubsection}
-\begin{rSubsection}{Programming Languages}{}{}{}
-  \item Proficient: Python2/3, shell. Competent: \LaTeX, MATLAB. Familiar: R, JavaScript.
-\end{rSubsection}
-
-\end{rSection}
-
-\begin{rSection}{Open source contributions}
-\begin{itemize}
-
-    \item \href{https://github.com/nilearn/nilearn}{NiLearn}: core developer.
-    \item \href{https://github.com/SIMEXP/load_confounds}{load\_confounds}: Added new methods and maintain code base.
-    \item \href{https://github.com/brainhackorg/brainhack_jupyter_book}{Brainhack book}: csv to markdown table parser for website and code review.
-        \item \href{https://github.com/nipype/pydra-fsl}{Pydra-FSL}: FSL wrapped with python workflow engine; nipype 1 to pydra interface converter.
-    \item \href{https://github.com/nipy/nibabel/pull/793}{NiBable}: GIFTI data reading method
-\end{itemize}
-
-\end{rSection}
-%----------------------------------------------------------------------------------------
-%	GRANTS SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Awards}
-
-  \begin{tabular}{@{} c l l r @{\hspace{6ex}}}
-
-  2017 & Travel Award & Guarantors of Brain & \pounds 600\\
-  2016 & Travel Award & Brainhack Vienna & \$500\\
-  2014 & Department Summer Bursary Award & University of York &\pounds 1000\\
-
-  \end{tabular}
 
 \end{rSection}
 
