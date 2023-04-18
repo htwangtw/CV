@@ -34,7 +34,8 @@
 }
 \usepackage[resetlabels]{multibib}
 % Define bibliographies.
-\newcites{j,h,c,g}{
+\newcites{p,j,h,c,g}{
+ \normalsize{Preprint},
  \normalsize{Peer-Reviewed Journals},
  \normalsize{Highlights},
  \normalsize{Conference Posters},
@@ -117,7 +118,7 @@
   \begin{rSubsection}{Postdoctoral scholarship}{May 2022 -- Apr. 2024}{Institut de valorisation des données (IVADO)}{CA\$ 70,000}
     \item Project: Impact of age and sex on transdiagnostic brain biomarkers amongst neurodegenerative conditions
   \end{rSubsection}
-  \begin{rSubsection}{UNIQUE Excellence Scholarship}{May 2022 -- Apr. 2023}{Unifying Neuroscience and Artificial Intelligence - Québec (UNIQUE)}{CA\$ 20,000}
+  \begin{rSubsection}{UNIQUE Excellence Scholarship (Declined)}{May 2022 -- Apr. 2023}{Unifying Neuroscience and Artificial Intelligence - Québec (UNIQUE)}{CA\$ 20,000}
     \item Project: Impact of age and sex on transdiagnostic brain biomarkers amongst neurodegenerative conditions
   \end{rSubsection}
 
@@ -140,11 +141,15 @@
 	% \nociteh{*}
 	% \bibliographyh{highlights}
 
-	\bibliographystyleg{IEEEtran}
+  \bibliographystyleg{IEEEtran}
   \nociteg{*}
   \bibliographyg{consortion}
-
-	\bibliographystylej{IEEEtran}
+  
+  \bibliographystylep{IEEEtran}
+  \nocitep{*}
+  \bibliographyp{preprints}
+  
+  \bibliographystylej{IEEEtran}
   \nocitej{*}
   \bibliographyj{publications}
 
@@ -153,7 +158,6 @@
   \bibliographyc{conferences}
 
 \end{rSection}
-\pagebreak
 
 %----------------------------------------------------------------------------------------
 %	Talks
@@ -177,7 +181,7 @@
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Professional service}
 \begin{tabular}{@{} l l @{\hspace{6ex}}}
- Oct. 2021 -- Present & Hackathon Chair, Open Science special interest group, OHBM, Glasgow, UK \\
+ Oct. 2021 -- Sep. 2022 & Hackathon Chair, Open Science special interest group, OHBM, Glasgow, UK \\
   Mar. 2020 -- Aug. 2021 & ECR representative, Sussex Neuroscience Steering Committee, University of Sussex\\
   Jun. 2021 & OHBM Sparkle special task force, OHBM, virtual. \\
   Jun. 2021 & Live Q \& A cohost and general enquiry, OHBM Brainhack, virtual. \\
@@ -189,8 +193,10 @@
 \end{rSection}
 
 \begin{rSection}{Ad-hoc Peer Review}
+Aperture Neuro,
 Advances in Methods and Practices in Psychological Science,
 Brain Imaging and Behavior,
+Communications Biology,
 Journal of Open Source Software,
 NeuroImage,
 Neuroinformatics,
@@ -258,7 +264,10 @@ Organization of Human Brain Mapping (OHBM); Open Science Special Interest Group,
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Teaching experience}
-
+  \begin{rSubsection}{UNIQUE educational workshop}{December 2022}{}{}
+    \item Instructor of the two day neuro-AI workshop.
+  \end{rSubsection}
+  
   \begin{rSubsection}{Brainhack School}{July 2022}{}{}
     \item Instructor of the one-month data science bootcamp for neuroscientists.
   \end{rSubsection}
