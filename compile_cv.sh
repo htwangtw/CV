@@ -6,7 +6,7 @@ pdflatex cv
 bibtex cv
 pdflatex cv
 
-git add cv.pdf
+git add .
 git commit -m "compile cv"
 rm ~/cv.pdf
 cp cv.pdf ~/
