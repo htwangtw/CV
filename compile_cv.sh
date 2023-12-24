@@ -8,8 +8,8 @@ pdflatex cv
 
 git add .
 git commit -m "compile cv"
-rm ~/cv.pdf
 cp cv.pdf ~/
+rm cv.pdf
 git checkout gh-pages
 mv ~/cv.pdf .
 git add cv.pdf
