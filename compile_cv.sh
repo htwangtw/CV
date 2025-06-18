@@ -11,7 +11,7 @@ rm cv.pdf
 git add .
 git commit -m "compile cv"
 git checkout gh-pages
-mv ~/cv.pdf .
+cp ~/cv.pdf .
 git add cv.pdf
 git commit -m "update"
 git push
