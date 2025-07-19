@@ -20,12 +20,21 @@
 
 \ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
 
-\LoadClass[10pt,letterpaper]{article} % Font size and paper type
+\LoadClass[11pt,a4paper,dvips]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
-
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage[
+	includehead,
+	left=0.5in,
+	top=0.5in,
+	right=0.5in,
+	bottom=0.5in
+]{geometry} % Document margins
+\usepackage{enumitem}
 
 %----------------------------------------------------------------------------------------
 %	HEADINGS COMMANDS: Commands for printing name and address
@@ -37,7 +46,7 @@
 \def \position#1{\def\@position{#1}} % Defines the \position command to set position
 \def \@position {} % Sets \@position to empty by default
 
-\def \addressSep {$|$} % Set default address separator to a |
+\def \addressSep { $|$ } % Set default address separator to a |
 
 % One, two or three address lines can be specified 
 \let \@addressone \relax
@@ -59,44 +68,54 @@
 % \printaddress is used to style an address line (given as input)
 \def \printaddress #1{
   \begingroup
-    \def \\ {\addressSep\ }
-    \centerline{#1}
+    \def \\ {\addressSep}
+    \leftline{#1}
   \endgroup
   \par
   \addressskip
 }
 
 % \printname is used to print the name as a page header
-\def \printname {
-\begin{center}
-    \namesize\bf\@name
-    % \addressskip\break
-\end{center}
-}
+\def \printname {\namesize\@name\addressskip}
+\def \printposition {\namesize\@position\addressskip}
 
-% \printname is used to print the name as a page header
-\def \printposition {
-\begin{center}
-    \large\bf\@position
-\end{center}
-\nameskip
-}
 %----------------------------------------------------------------------------------------
 %	PRINT THE HEADING LINES
 %----------------------------------------------------------------------------------------
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{} % clear existing header/footer entries
+% Place Page X of Y on the right-hand
+% side of the footer
+\fancyhead[L]{
+\textit{CURRICULUM VITAE} \\
+\textit{\@name}
+}
+\fancyhead[R]{
+\textit{Page \textbf{\thepage} \hspace{1pt} of \textbf{\pageref{LastPage}}}\\
+\textit{Last updated: \today}
+}
+
+\fancypagestyle{firststyle}
+{
+   \fancyhf{}
+   \fancyhead[C]{\namesize\textbf{CURRICULUM VITAE}}
+}
+
 
 \let\ori@document=\document
 \renewcommand{\document}{
   \ori@document  % Begin document
-  \printname % Print the name specified with \name
-  \printposition
-  \@ifundefined{@addressone}{}{ % Print the first address if specified
-    \printaddress{\@addressone}}
-  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-    \printaddress{\@addresstwo}}
-     \@ifundefined{@addressthree}{}{ % Print the third address if specified
-    \printaddress{\@addressthree}}
+  \thispagestyle{firststyle}
+  \textbf{\printname} 
+  \@ifundefined{@position}{}{$|$ \printposition}\\
+  \textbf{Current affiliation:}\\
+  \@ifundefined{@addressone}{}{\printaddress{\@addressone}}
+  \@ifundefined{@addresstwo}{}{\printaddress{\@addresstwo}}
+  \@ifundefined{@addressthree}{}{\printaddress{\@addressthree}}
+
 }
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION FORMATTING
@@ -106,8 +125,8 @@
 \newenvironment{rSection}[1]{ % 1 input argument - section name
   \sectionskip
   \MakeUppercase{\bf #1} % Section title
-  \sectionlineskip
-  \hrule % Horizontal line
+  % \sectionlineskip
+  %\hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
     \setlength{\leftmargin}{0.5em} % Margin within the section
   }
@@ -146,7 +165,7 @@
 }
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
-\def\namesize{\huge} % Size of the name at the top of the document
+\def\namesize{\large} % Size of the name at the top of the document
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
 \def\nameskip{\bigskip} % The space after your name at the top
