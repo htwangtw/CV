@@ -92,7 +92,7 @@
 \textit{\@name}
 }
 \fancyhead[R]{
-\textit{Page \textbf{\thepage} \hspace{1pt} of \textbf{\pageref{LastPage}}}\\
+\textit{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}\\
 \textit{Last updated: \today}
 }
 
