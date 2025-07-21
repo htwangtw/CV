@@ -29,13 +29,15 @@
 \usepackage{fancyhdr}
 \usepackage[
 	includehead,
-	left=0.5in,
-	top=0.5in,
-	right=0.5in,
-	bottom=0.5in
+	left=1.27cm,
+	top=1.27cm,
+	right=1.27cm,
+	bottom=1.27cm
 ]{geometry} % Document margins
 \usepackage{enumitem}
 
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 %----------------------------------------------------------------------------------------
 %	HEADINGS COMMANDS: Commands for printing name and address
 %----------------------------------------------------------------------------------------
@@ -99,7 +101,10 @@
 \fancypagestyle{firststyle}
 {
    \fancyhf{}
-   \fancyhead[C]{\namesize\textbf{CURRICULUM VITAE}}
+   \fancyhead[C]{
+   	\namesize\textbf{\printname}
+	\@ifundefined{@position}{}{\textbf{$|$ \printposition}}   
+   }
 }
 
 
@@ -107,8 +112,6 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \thispagestyle{firststyle}
-  \textbf{\printname} 
-  \@ifundefined{@position}{}{$|$ \printposition}\\
   \textbf{Current affiliation:}\\
   \@ifundefined{@addressone}{}{\printaddress{\@addressone}}
   \@ifundefined{@addresstwo}{}{\printaddress{\@addresstwo}}
